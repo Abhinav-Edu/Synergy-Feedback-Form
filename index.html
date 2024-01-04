@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <style>
+        .star-rating {
+            font-size: 24px;
+            color: #ffd700; /* Gold color for stars */
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+    <title>Number of Stars Rating with Comments</title>
+</head>
+<body>
+
+    <div class="star-rating" data-rating="1" onclick="setRating(1)"> <i class="fas fa-star"></i> Poor</div>
+    <div class="star-rating" data-rating="2" onclick="setRating(2)"> <i class="fas fa-star"></i><i class="fas fa-star"></i> Below Average</div>
+    <div class="star-rating" data-rating="3" onclick="setRating(3)"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> Average</div>
+    <div class="star-rating" data-rating="4" onclick="setRating(4)"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> Good</div>
+    <div class="star-rating" data-rating="5" onclick="setRating(5)"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> Excellent</div>
+
+    <div id="selected-rating"></div>
+
+    <script>
+        const comments = [
+            "Poor",
+            "Below Average",
+            "Average",
+            "Good",
+            "Excellent"
+        ];
+
+        function setRating(rating) {
+            const comment = comments[rating - 1];
+            const stars = Array.from({ length: rating }, () => '<i class="fas fa-star"></i>').join('');
+            document.getElementById('selected-rating').innerHTML = `You selected ${rating} star(s). ${stars} ${comment}`;
+        }
+    </script>
+
+</body>
+</html>

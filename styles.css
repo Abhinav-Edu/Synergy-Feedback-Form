@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#rating-container {
+    margin-bottom: 20px;
+}
+
+.stars {
+    cursor: pointer;
+}
+
+.star {
+    font-size: 24px;
+    color: #ccc;
+    margin-right: 5px;
+}
+
+.star:hover,
+.star.active {
+    color: #ffcc00;
+}
+
+#comments-container {
+    margin-top: 20px;
+}
+
+#comment-input {
+    width: 100%;
+    margin-bottom: 10px;
+}
